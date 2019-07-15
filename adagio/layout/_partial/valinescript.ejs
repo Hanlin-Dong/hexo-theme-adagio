@@ -1,0 +1,12 @@
+<script>
+    new Valine({
+        el: "#vcomment",
+        appId: "<%- theme.valine_appId %>",
+        appKey: "<%- theme.valine_appKey %>",
+        notify: false,
+        varify: false,
+        avatar: 'identicon',
+        placeholder: "<%- theme.valine_placeholder %>",
+        recordIP: true
+    })
+</script>

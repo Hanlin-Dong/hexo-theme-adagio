@@ -1,0 +1,33 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="<%- config.description %>">
+    <link rel="shortcut icon" href="<%- url_for(theme.favicon) %>">
+    <title><% if (page.title) { %><%- page.title %>-<% } %><%- theme.SEOTitle %></title>
+    <% if (theme.use_cdn) { %>
+        <% if (theme.cdn_provider == 'bootcdn') { %>
+            <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdn.bootcss.com/academicons/1.8.6/css/academicons.min.css" rel="stylesheet">
+            <link href="https://cdn.bootcss.com/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+            <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+        <% } else if (theme.cdn_provider == 'cdnjs') { %>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <% } else { %>
+            <%- css('/css/bootstrap.min.css') %>
+            <%- css('/css/academicons.min.css') %>
+            <%- css('/css/font-awesome.all.min.css') %>
+            <%- css('/css/animate.min.css') %>
+        <% } %>
+    <% } else { %>
+        <%- css('/css/bootstrap.min.css') %>
+        <%- css('/css/academicons.min.css') %>
+        <%- css('/css/font-awesome.all.min.css') %>
+        <%- css('/css/animate.min.css') %>
+    <% } %>
+    <%- css('/css/adagio.css') %>
+</head>

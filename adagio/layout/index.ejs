@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- partial('_partial/head') %>
+<body>
+<% if (theme.navbar) { %>
+<%- partial('_partial/nav', {index: true}) %>
+<% } %>
+<%- partial('_partial/banner') %>
+<div class="container">
+    <div class="row pt-3">
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col">
+                    <% page.posts.each(function(post) { %>
+                    <%- partial('_partial/artcard', {post: post}) %>
+                    <hr class="row">
+                    <% }) %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="paginator">
+                        <%- partial('_partial/paginator', {index: true}) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 pt-3">
+            <%- partial('_partial/sidebar') %>
+        </div>
+    </div>
+</div>
+
+<%- partial('_partial/footer') %>
+<%- partial('_partial/script') %>
+</body>
+</html>

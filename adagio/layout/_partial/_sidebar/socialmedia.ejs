@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col text-center">
+        <ul class="list-inline">
+            <% theme.media_types.forEach(function (mediatype) { %>
+            <li class="list-inline-item">
+                <% if (mediatype == 'github') { %>
+                <a href="https://github.com/<%- theme.github_username %>">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <% } else if (mediatype == 'pinterest') { %>
+                <a href="https://www.pinterest.com/<%- theme.pinterest_username %>">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-pinterest-p fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <% } else if (mediatype == 'researchgate') { %>
+                <a href="https://www.researchgate.net/profile/<%- theme.researchgate_username %>">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="ai ai-researchgate fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <% } else if (mediatype == 'linkedin') { %>
+                <a href="https://www.linkedin.com/in/<%- theme.linkedin_username %>">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <% } else if (mediatype == 'facebook') { %>
+                <a href="https://www.facebook.com/<%- theme.facebook_username %>">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <% } else if (mediatype == 'twitter') { %>
+                <a href="https://twitter.com/<%- theme.twitter_username %>">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <% } else if (mediatype == 'zhihu') { %>
+                <a href="https://www.zhihu.com/people/<%- theme.zhihu_username %>">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-zhihu fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <% } else if (mediatype == 'quora') { %>
+                <a href="https://www.quora.com/profile/<%- theme.quora_username %>">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-quora fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <% } %>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+</div>

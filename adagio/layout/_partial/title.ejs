@@ -1,0 +1,21 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <% if (page.link) { %>
+        <h1 class="mt-4 article-title page-title"><a href="<%- url_for(page.link) %>"><%- page.title %></a></h1>
+        <% } else { %>
+        <h1 class="mt-4 article-title page-title"><%- page.title %></h1>
+        <% } %>
+        <p class="lead text-gray mt-3">By <% if (page.author) { %><%- page.author %><% } else { %>Anonymous<% } %>; Published on <%- page.date.format('YYYY-MM-DD') %></p>
+        <% if (page.tags) { %>
+        <div class="tags">
+            <ul class="tag-list">
+                <% page.tags.forEach(function(tag) { %>
+                <li class="tag-list-item">
+                    <a class="tag-list-link" href="<%- url_for('/tags/'+tag.name+'/') %>"><%- tag.name %></a>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <nav class="nav">
+        <div class="collapse navbar-collapse" id="navbar-sm">
+            <% if (theme.navbar) { %>
+            <% for (let item of theme.navbar_items) { %>
+            <div class="navbar-nav">
+                <a href="<%- item.url %>" class="nav-item nav-link"><%- item.text %></a>
+            </div>
+            <% }} %>
+        </div>
+    </nav>
+</div>
+<% if (index) { %>
+<div class="my-navbar d-md-none">
+    <div class="nav pt-2 pl-1">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sm"
+            aria-expanded="false" aria-label="Toggle Navigation">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+    </div>
+</div>
+<% } else { %>
+<div class="d-flex d-md-none" style="width: 100%; background-color: #e9ecef">
+    <div class="nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sm"
+            aria-expanded="false" aria-label="Toggle Navigation">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+    </div>
+    <nav class="navbar ml-auto">
+        <a class="navbar-brand" href="<%- url_for('/') %>">
+            <% if (theme.logo_url) { %>
+            <img class="logo" src="<%- url_for(theme.logo_url) %>" />
+            <% } else if (theme.logo_word) { %>
+            <%- theme.logo_word %>
+            <% } else { %>
+            HOME
+            <% } %>
+        </a>
+    </nav>
+</div>
+<% } %>
+
+<div class="container d-none d-md-block my-navbar">
+    <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+        <a class="navbar-brand <% if (index) { %>d-none<% } %>" href="<%- url_for('/') %>">
+            <% if (theme.logo_url) { %>
+            <img class="logo" src="<%- url_for(theme.logo_url) %>" />
+            <% } else if (theme.logo_word) { %>
+            <%- theme.logo_word %>
+            <% } else { %>
+            HOME
+            <% } %>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <% for (let item of theme.navbar_items) { %>
+                <li class="nav-item pl-2 pr-2 <% if ('/'+page.path == item.url || page.path == item.url || page.layout == item.layout) { %>active<% } %>">
+                    <a class="nav-link" href="<%- url_for(item.url) %>"><%- item.text %></a>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
+

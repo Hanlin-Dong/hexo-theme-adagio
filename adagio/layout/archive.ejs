@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<%- partial('_partial/head') %>
+
+<body>
+    <%- partial('_partial/nav', {index: false}) %>
+    <%- partial('_partial/archivetitle') %>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-9">
+                <% page.posts.each(function(post) { %>
+                <div class="row">
+                    <div class="col">
+                        <a href="<%- url_for(post.path) %>" class="index-card-link">
+                            <div class="card-body index-card-box">
+                                <h4 class="card-title text-dark article-title"><%- post.title %></h4>
+                                <h6 class="card-subtitle mt-2 text-muted">
+                                    By <% if (post.author) { %><%- post.author %><% } else { %>Anonymous<% } %>
+                                    ; Published on <%- post.date.format('YYYY-MM-DD') %></h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <hr class="row">
+                <% }) %>
+                <div class="paginator">
+                    <%- partial('_partial/paginator', {index: true}) %>
+                </div>
+            </div>
+            <div class="col-md-3 mt-3">
+                <%- partial('_partial/sidebar') %>
+            </div>
+        </div>
+    </div>
+    <%- partial('_partial/footer') %>
+    <%- partial('_partial/script') %>
+</body>
+
+</html>

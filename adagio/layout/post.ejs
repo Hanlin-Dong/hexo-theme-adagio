@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<%- partial('_partial/head') %>
+<body>
+    <%- partial('_partial/nav', {index: false}) %>
+    <%- partial('_partial/title') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 pt-2">
+                <div class="row">
+                    <div class="col-12">
+                        <main>
+                            <article class="article-text page-content"><%- page.content %></article>
+                        </main>
+                        <% if (page.photos) { %>
+                        <% for (let url of page.photos) { %>
+                            <p><img src="<%- url %>" style="max-width: 100%"></p>
+                        <% }} %>
+                    </div>
+                </div>
+                <div class="row mt-5 mb-5">
+                    <div class="col-12">
+                        <%- partial('_partial/paginator', {index: false}) %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="vcomment"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="container pt-4 page-sidebar">
+                    <% if (theme.sidebar_applause_easy) { %>
+                    <%- partial('_partial/_sidebar/applause-easy') %>
+                    <% } %>
+                    <hr class="row">
+                    <div class="row toc-container">
+                        <div class="col-12">
+                            <h6>NAVIGATION</h6>
+                            <%- toc(page.content, {list_number: false}) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- partial('_partial/footer') %>
+    <%- partial('_partial/script') %>
+    <% if (theme.valine_comments) { %>
+    <%- partial('_partial/valinescript') %>
+    <% } %>
+</body>
+</html>

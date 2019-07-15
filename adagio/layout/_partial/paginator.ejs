@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col">
+        <nav aria-label="paginator" class="paginator">
+            <ul class="pagination d-none d-md-flex pagination-lg justify-content-center">
+                <li class="page-item <% if (!page.prev) { %> disabled <% } %>">
+                    <a class="page-link"
+                        href="<% if (index) {%><%- url_for(page.prev_link) %><% } else if (page.prev) { %><%- url_for(page.prev.path) %><% } %>"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;
+                            <% if (index) {%>Newer<% } else if (page.prev) { %><%- page.prev.title %><% } else { %>No more<% } %></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item <% if (!page.next) { %> disabled <% } %>">
+                    <a class="page-link"
+                        href="<% if (index) {%><%- url_for(page.next_link) %><% } else if (page.next) { %><%- url_for(page.next.path) %><% } %>"
+                        aria-label="Next">
+                        <span
+                            aria-hidden="true"><% if (index) {%>Older<% } else if (page.next) { %><%- page.next.title %><% } else { %>No more<% } %>
+                            &raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="pagination d-md-none justify-content-center">
+                <li class="page-item <% if (!page.prev) { %> disabled <% } %>">
+                    <a class="page-link"
+                        href="<% if (index) {%><%- url_for(page.prev_link) %><% } else if (page.prev) { %><%- url_for(page.prev.path) %><% } %>"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;
+                            <% if (index) {%>Newer<% } else if (page.prev) { %><%- page.prev.title %><% } else { %>No more<% } %></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item <% if (!page.next) { %> disabled <% } %>">
+                    <a class="page-link"
+                        href="<% if (index) {%><%- url_for(page.next_link) %><% } else if (page.next) { %><%- url_for(page.next.path) %><% } %>"
+                        aria-label="Next">
+                        <span
+                            aria-hidden="true"><% if (index) {%>Older<% } else if (page.next) { %><%- page.next.title %><% } else { %>No more<% } %>
+                            &raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+

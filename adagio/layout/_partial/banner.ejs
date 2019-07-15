@@ -1,0 +1,11 @@
+<% if (theme.img_banner) { %>
+<img class="d-none d-sm-block" src="<%- url_for(theme.img_banner_large) %>" style="width: 100%;">
+<img class="d-sm-none" src="<%- url_for(theme.img_banner_small) %>" style="width: 100%;">
+<% } else { %>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1 class="mt-4 article-title page-title"><%- theme.title %></h1>
+        <h2 class="text-muted"><small><%- theme.subtitle %></small></h2>
+    </div>
+</div>
+<% } %>

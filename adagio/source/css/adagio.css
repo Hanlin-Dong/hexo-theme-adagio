@@ -1,0 +1,308 @@
+.index-card-box {
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 0px 0px 6px;
+    border-radius: 3px;
+    
+}
+
+.index-card-box:hover {
+    border-color: #bbb;
+    transition: border-color;
+    transition-duration: 1s;
+}
+
+.index-card-link:hover {
+    text-decoration: none;
+}
+
+.article-title {
+    letter-spacing: 0.5px;
+    line-height: 2rem;
+}
+
+.article-text {
+    text-align: justify;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+    line-height: 1.7rem;
+}
+
+.paginator a {
+    color: black;
+}
+.icon-link {
+    color: #999;
+}
+.icon-link:hover {
+    color: #666;
+    transition: color;
+    transition-duration: 0.3s;
+}
+.fa-2x {
+    font-size: 1.5rem;
+    margin: -0.6rem;
+}
+.fa-stack-2x {
+    font-size: 100%;
+}
+.fa-stack-1x {
+    font-size: 100%;
+}
+
+.bottom-social .fa-2x {
+    font-size: 2rem;
+    margin: 0 -5px;
+}
+
+.my-navbar {
+    position: absolute;
+}
+
+#navbar-sm a {
+    color: black;
+}
+
+.logo {
+    height: 30px;
+}
+
+.tags .tag-list {
+    padding: 0;
+}
+.tags .tag-list-item {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 999em;
+    border-color: gray;
+    padding: 0 10px;
+    color: gray;
+    line-height: 24px;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0 1px;
+    margin-bottom: 6px;
+}
+.tags .tag-list-link {
+    color: #666;
+}
+.tags .tag-list-link:hover {
+    text-decoration: none;
+}
+.tags .tag-list-item:hover {
+    box-shadow: 0 0 2px 2px #ddd;
+    transition: box-shadow;
+    transition-duration: 0.1s;
+}
+
+.archive .archive-list {
+    padding: 0;
+}
+
+.archive .archive-list-item {
+    display: inline-block;
+    padding: 0 12px 0 0;
+    color: gray;
+    line-height: 24px;
+    font-size: 1rem;
+    text-decoration: none;
+    margin: 0 1px;
+}
+
+.archive .archive-list-link {
+    text-decoration: none;
+    color: gray;
+}
+
+.archive .archive-list-link:hover {
+    text-decoration-line: underline;
+}
+
+.page-sidebar {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.toc-container,
+.toc-container ol,
+.toc-container li {
+    list-style-type: none;
+}
+
+.toc-container span {
+    color: gray;
+}
+
+ol.toc {
+    padding-left: 0;
+}
+
+
+.page-title {
+    line-height: 3.5rem;
+}
+
+.article-text h2 {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+.article-text h3 {
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+}
+.article-text h4 {
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+}
+.article-text img {
+    max-width: 100%;
+    height: auto;
+}
+
+.page-content p {
+    margin-top: 1.6rem;
+}
+
+.article-text code {
+    color: #800;
+    background-color: #f6f7f9;
+    margin: 0 2px;
+}
+
+.article-text p a {
+    color: #02a;
+    padding: 0 2px;
+}
+
+table {
+    overflow-x: auto;
+    min-width: 100%;
+}
+
+th,
+td {
+    text-align: center;
+    border-bottom: 1px solid #bbb;
+    padding: 0.5rem 0;
+}
+
+
+.highlight pre,
+pre,
+.highlight .hll {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
+.highlight {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.highlight td {
+    text-align: left;
+    border-bottom: 0 solid #bbb;
+    padding: 0;
+}
+
+.highlight .gutter {
+    font-size: 95%;
+    line-height: 1.4rem;
+    width: 30px;
+}
+
+.highlight .gutter pre {
+    padding-left: 6px;
+    padding-right: 6px;
+    color: #998;
+}
+
+.highlight .code {
+    font-size: 95%;
+    line-height: 1.4rem;
+    width: 100%;
+}
+
+.highlight .comment {
+    color: #998;
+    font-style: italic;
+}
+
+.highlight .error {
+    color: #a61717;
+    background-color: #e3d2d2;
+}
+
+.highlight .name {
+    color: teal;
+}
+
+.highlight .symbol {
+    color: purple;
+    font-weight: bold;
+}
+
+.highlight .number {
+    color: navy;
+}
+
+.highlight .string {
+    color: #f60;
+}
+
+.download-item {
+    padding-left: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.download-header button {
+    font-weight: bold;
+    font-size: large;
+}
+
+
+footer a {
+    color: black;
+}
+
+.applause {
+    height: 100px;
+    position: relative;
+    padding: 20px;
+    margin: 10px auto 0;
+    display: flex;
+    overflow-x: hidden;
+}
+
+blockquote {
+    padding: 0.1rem 2rem 1rem;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 0 0 0 5px;
+    border-color: #999;
+    background-color: #f3f3f1;
+    text-align: center;
+}
+
+blockquote.left {
+    text-align: left;
+}
+
+blockquote.right {
+    text-align: right;
+}
+
+blockquote footer strong {
+    padding-right: 1rem;
+}
+
+figcaption span {
+    color: green;
+    padding-right: 2rem;
+}
+

@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col">
+        <a href="<%- url_for(post.path) %>" class="index-card-link">
+            <div class="card-body index-card-box">
+                <h4 class="card-title text-dark article-title"><%- post.title %></h4>
+                <h6 class="card-subtitle mt-2 text-muted">
+                    By <% if (post.author) { %><%- post.author %><% } else { %>
+                    Anonymous<% } %>; 
+                    Published on <%- post.date.format('YYYY-MM-DD') %></h6>
+                <p class="card-text text-dark mt-2 article-text">
+                    <% if (post.content.indexOf('<a id="more">') > -1) { let start = post.content.indexOf('<a id="more">'); %><%- strip_html(post.content.slice(0, start)) %><% } else { %><%- truncate(strip_html(post.content), {length:200}) %><% } %>
+                </p>
+            </div>
+        </a>
+    </div>
+</div>

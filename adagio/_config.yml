@@ -1,0 +1,127 @@
+# This is the configuration file for the theme Adagio
+# Author: Hanlin DONG (http://www.hanlindong.com)
+
+# Banner: It will appear only on the index page.
+#         To make it mobile device friendly, two banners can be specified.
+#         One is for medium and large screen, config with img_banner_large;
+#         The other is for small screen, config with img_banner_small.
+#         The value for these two should be url or relative url to a picture.
+#         If img_banner is false, no banner image will be used.
+img_banner: false
+img_banner_large: https://via.placeholder.com/1280x320.png?text=img_banner_large
+img_banner_small: https://via.placeholder.com/620x320.png?text=img_banner_small
+
+# Logo: The logo will appear on every page except for the index page.
+#       If your logo is a picture, please specify the url for the logo at logo_url.
+#       If you don't have a picture, just use some word as logo. set logo_url to ~ and then specify logo_word.
+# logo_url: https://placeholder.pics/svg/100x50/DEDEDE/555555/LOGO
+logo_url: https://via.placeholder.com/100x50.png?text=logo
+logo_word: Adagio
+
+# Navbar: If you have pages other then the posts, you can create a navbar.
+#         The navbar will appear on medium and large screens, and folded to a menu button on small screens.
+#         If navbar is false, no navbar will be displayed.
+#         If navbar is true, you should specify navbar_items.
+#         For each navbar item, the text will show in the navbar, and the corresponding url will be linked to.
+navbar: true
+navbar_items:
+  - text: Hexo
+    url: https://hexo.io
+    layout: ~
+  - text: Adagio's author
+    url: http://www.hanlindong.com
+    layout: ~
+
+# SEO title: It is always attached to page title.
+#            You should specify it if you want your website is more search engine friendly.
+SEOTitle: Adagio
+
+# favicon: specify your favicon as a path to .ico file.
+favicon: http://some.url/to/favicon.ico
+
+# Social media: link to your social media in the sidebar or footbar.
+# For media types, you can choose from 'github', 'pinterest', 'facebook', 'linkedin',
+#     'researchgate', 'twitter', 'zhihu', 'quora'
+# It's better if your choose four social networks.
+media_types:
+    - github
+    - facebook
+    - pinterest
+    - linkedin
+# You should find the usernames from the url of your personal page.
+# Note: it's not the login username!
+github_username:       xxxxx
+pinterest_username:    xxxxx
+facebook_username:     xxxxx
+linkedin_username:     xxxxx
+researchgate_username: xxxxx
+twitter_username:      xxxxx
+zhihu_username:        xxxxx
+quora_username:        xxxxx
+
+# Add an applause button to the side bar.
+# Documentation: https://github.com/Hanlin-Dong/applause-easy
+sidebar_applause_easy: true
+applause_easy_appId: xxxxxxxxxx
+applause_easy_appKey: xxxxxxxxxx
+clap_button: http://img.hanlindong.com/blog/site/clap.png
+
+# Add a tag cloud to the top of the sidebar.
+sidebar_tag_cloud: true
+
+# Add a about me block to the sidebar.
+# Specify the avatar picture url in avatar_link
+# Add some word to the description.
+sidebar_about_me: true
+sidebar_avatar_link: https://via.placeholder.com/200x200.png?text=sidebar_avatar_link
+sidebar_about_description: The owner of this website.
+
+# Add some social network links to the sidebar.
+sidebar_social_network: true
+
+# Add contact information to the side bar.
+sidebar_contact: true
+sidebar_contact_name: Adagio Author
+sidebar_contact_address: 1 Happy Rd. <br> Utopia
+
+# Add archive tags to the side bar.
+sidebar_archive: true
+
+# Add friend links to the sidebar.
+# For each friend, specify the text what will be desplayed with 'title', and it's corresponding url as 'href'.
+sidebar_friends: true
+friends: 
+    -   title: Hexo
+        href: https://hexo.io
+    -   title: Github
+        href: https://github.com
+
+# The content that will appear in the footer.
+footer_content: Thanks for coming!
+
+# Use valine comment system.
+# For documentation: https://valine.js.org
+valine_comments: true
+valine_appId: xxxxxxxxxx
+valine_appKey: xxxxxxxxxx
+valine_placeholder: ~
+
+# CDN for the static contents.
+# If use_cdn is false, the js files in the source directory will be served.
+# If use_cdn is true, you should specify cdn provider.
+# You can use 'bootcdn' (better in China) or 'cdnjs' (better outside China) (except bootstrap.css).
+use_cdn: true
+cdn_provider: bootcdn
+
+
+# Analytics
+# For Baidu analytics, specify the url given.
+baidu_analytics: true
+baidu_url: https://hm.baidu.com/hm.js?123456789
+# For google analytics, specify with the UA-xxx track ID.
+google_analytics: true
+google_track_id: UA-11111111-1
+
+
+# Mathjax
+mathjax: true

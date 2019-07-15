@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col">
+        <ul class="list-inline">
+            <h6>FRIENDS</h6>
+            <% theme.friends.forEach((friend) => { %>
+            <li class="list-inline-item"><a href="<%- friend.href %>"><span class="text-muted"><%- friend.title %></span></a>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+</div>
