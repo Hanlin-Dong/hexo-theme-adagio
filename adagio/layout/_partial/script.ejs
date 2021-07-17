@@ -1,82 +1,33 @@
-<% if (theme.use_cdn) { %>
-    <% if (theme.cdn_provider == 'bootcdn') { %>
-        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.slim.min.js"></script>
-        <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.bootcss.com/font-awesome/5.9.0/js/all.min.js"></script>
-        <% if (theme.mathjax) { %> 
-            <script type="text/x-mathjax-config">
-                MathJax.Hub.Config({
-                    CommonHTML: { linebreaks: { automatic: true } },
-                    "HTML-CSS": { linebreaks: { automatic: true } },
-                    SVG: { linebreaks: { automatic: true } }
-                });
-            </script>
-            <script src='https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-        <% } %>
-    <% } else if (theme.cdn_provider == 'cdnjs') { %>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
-        <% if (theme.mathjax) { %>
-            <script type="text/x-mathjax-config">
-                MathJax.Hub.Config({
-                    CommonHTML: { linebreaks: { automatic: true } },
-                    "HTML-CSS": { linebreaks: { automatic: true } },
-                    SVG: { linebreaks: { automatic: true } }
-                });
-            </script>
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
-            </script>
-        <% } %>
-    <% } else { %>
-        <%- js('/js/jquery.slim.min.js') %>
-        <%- js('/js/bootstrap.bundle.min.js') %>
-        <%- js('/js/font-awesome.all.min.js') %>
-        <% if (theme.mathjax) { %>
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({
-                CommonHTML: { linebreaks: { automatic: true } },
-                "HTML-CSS": { linebreaks: { automatic: true } },
-                SVG: { linebreaks: { automatic: true } }
-            });
-        </script>
-        <script src="<%- url_for('/js/mathjax.js') %>" async>
-        </script>
-        <% } %>
+<% if (theme.use_cdn && (theme.cdn_provider == 'bootcdn')) { %>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+    <% if (theme.math) { %> 
+    <script defer src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.13.11/katex.min.js"></script>
+    <script defer src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.13.11/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <% } %>
+<% } else if (theme.use_cdn && (theme.cdn_provider == 'cdnjs')) { %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+    <% if (theme.math) { %>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     <% } %>
 <% } else { %>
     <%- js('/js/jquery.slim.min.js') %>
     <%- js('/js/bootstrap.bundle.min.js') %>
     <%- js('/js/font-awesome.all.min.js') %>
-    <% if (theme.mathjax) { %>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-                CommonHTML: { linebreaks: { automatic: true } },
-                "HTML-CSS": { linebreaks: { automatic: true } },
-                SVG: { linebreaks: { automatic: true } }
-            });
-        </script>
-    <script src="<%- url_for('/js/mathjax.js') %>" async>
-    </script>
+    <% if (theme.math) { %>
+    <script defer src="<%- url_for('/js/katex.min.js') %>"></script>
+    <script defer src="<%- url_for('/js/auto-render.min.js') %>" onload="renderMathInElement(document.body);"></script>
     <% } %>
 <% } %>
 
 <%- js('/js/av.min.js') %>
 <%- js('/js/valine.min.js') %>
 <%- js('/js/applause-easy.js') %>
-
-<script>
-$(document).ready(function() {
-    var a = new ApplauseEasy({
-        id: 'applause-easy',
-        appId: "<%- theme.applause_easy_appId %>",
-        appKey: "<%- theme.applause_easy_appKey %>",
-        img_src: "<%- url_for(theme.clap_button) %>",
-        img_width: "50px",
-        img_height: "50px"
-    })
-})
-</script>
+<%- js('/js/adagio.js') %>
 
 <% if (theme.baidu_analytics) { %>
 <script>

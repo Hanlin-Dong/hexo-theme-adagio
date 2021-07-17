@@ -8,21 +8,27 @@ class ApplauseEasy {
         let img_height = app.img_height;
         let trigger_every = app.trigger_every;
         let trigger_fun = app.trigger_fun;
+        let counter = 0;
         let key = window.location.pathname + '#' + id;
         let browserCounter = 0;
-        if (!AV) { alert('AV module is not registered.')}
+        if (!AV) { console.log('AV module is not registered.')}
         try {
             AV.init(appId, appKey);
         }
         catch(err) {
             console.log(err);
         }
-        document.getElementById(id).innerHTML = `<div style="margin: 0 auto; text-align: center;"><span id="${id+'-num'}">0</span></div>
-            <div style="margin: 0 auto; text-align: center;"><img id="${id+'-btn'}" src="${img_src}" style="width: ${img_width}; height: ${img_height}; border-style: solid; border-width: 1px; border-radius: 50%; cursor: pointer;"/></div>`;
+
+        document.getElementById(id).innerHTML = `<div class="applause-number"><span id="${id+'-num'}">0</span></div>
+            <div class="applause-container">
+                <div class="applause-wrapper">
+                <img id="${id+'-btn'}" src="${img_src}" style="width: ${img_width}; height: ${img_height}; "/>
+                </div>
+            </div>`;
+        
         document.getElementById(id+'-btn').addEventListener('click', function(){
             let numDOM = document.getElementById(id + '-num');
             numDOM.innerHTML = parseInt(numDOM.innerHTML) + 1;
-            animateCSS(('#'+id+'-btn'), 'heartBeat');
             browserCounter += 1;
             if (browserCounter > trigger_every) {
                 trigger_fun();
@@ -30,6 +36,7 @@ class ApplauseEasy {
         });
         document.getElementById(id+'-btn').addEventListener('mouseout', function(){
             updateRemote(key, browserCounter);
+            counter += browserCounter;
             browserCounter = 0;
         })
 
@@ -40,14 +47,24 @@ class ApplauseEasy {
             query.first().then(
                 function (applause) {
                     if (applause) {
-                        console.log(applause);
+                        let target = applause.attributes.counter;
+                        let targetStr = target.toString();
                         let dom = document.getElementById(id + '-num');
-                            let fastIncrease = setInterval(function(){
-                            dom.innerHTML = parseInt(dom.innerHTML) + 1;
-                            if (dom.innerHTML >= applause.attributes.counter) {
-                                clearInterval(fastIncrease)
+                        let digits = targetStr.length;
+                        dom.innerHTML = Array(digits).fill("0").join("");
+                        let i = 0;
+                        let fastIncrease = setInterval(function(){
+                            let currentHTML = dom.innerHTML;
+                            if (currentHTML[i] < targetStr[i]) {
+                                let newNum = parseInt(currentHTML[i]) + 1;
+                                dom.innerHTML = currentHTML.substring(0, i) + newNum.toString() + currentHTML.substring(i+1, digits);
+                            } else {
+                                i += 1;
+                                if (i >= digits) {
+                                    clearInterval(fastIncrease);
+                                }
                             }
-                        }, 3)
+                        }, 50)
                     } else {
                         let applause = new Applause();
                         applause.set('key', key);
@@ -70,7 +87,6 @@ class ApplauseEasy {
 
         fetchRemote(key, id);
 
-
         let updateRemote = function(key, step) {
             let query = new AV.Query('Applause');
             query.equalTo('key', key);
@@ -92,19 +108,6 @@ class ApplauseEasy {
                     console.log(err);
                 }
             )
-        }
-
-
-        let animateCSS = function (element, animationName, callback) {
-            const node = document.querySelector(element)
-            node.classList.add('animated', animationName, 'faster')
-
-            function handleAnimationEnd() {
-                node.classList.remove('animated', animationName, 'faster')
-                node.removeEventListener('animationend', handleAnimationEnd)
-                if (typeof callback === 'function') callback()
-            }
-            node.addEventListener('animationend', handleAnimationEnd)
         }
     }
 }

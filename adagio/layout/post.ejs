@@ -16,6 +16,9 @@
                         <% for (let url of page.photos) { %>
                             <p><img src="<%- url %>" style="max-width: 100%"></p>
                         <% }} %>
+                        <% if (theme.post_copyright) { %>
+                            <p class="text-muted"><%- theme.post_copyright %></p>
+                        <% } %>
                     </div>
                 </div>
                 <div class="row mt-5 mb-5">

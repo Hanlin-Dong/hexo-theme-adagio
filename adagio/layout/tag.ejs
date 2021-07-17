@@ -3,7 +3,11 @@
 <%- partial('_partial/head') %>
 <body>
     <%- partial('_partial/nav', {index: false}) %>
-    <%- partial('_partial/tagtitle') %>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="mt-4 article-title page-title">TAG: <%- page.tag %></h1>
+        </div>
+    </div>
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-9">

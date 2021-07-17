@@ -14,8 +14,8 @@ img_banner_small: https://via.placeholder.com/620x320.png?text=img_banner_small
 # Logo: The logo will appear on every page except for the index page.
 #       If your logo is a picture, please specify the url for the logo at logo_url.
 #       If you don't have a picture, just use some word as logo. set logo_url to ~ and then specify logo_word.
-# logo_url: https://placeholder.pics/svg/100x50/DEDEDE/555555/LOGO
-logo_url: https://via.placeholder.com/100x50.png?text=logo
+# logo_url: https://via.placeholder.com/100x50.png?text=logo
+logo_url: false
 logo_word: Adagio
 
 # Navbar: If you have pages other then the posts, you can create a navbar.
@@ -69,19 +69,30 @@ clap_button: http://img.hanlindong.com/blog/site/clap.png
 # Add a tag cloud to the top of the sidebar.
 sidebar_tag_cloud: true
 
+# Add trending posts selected by the author.
+# The path should be specified to urls of your own posts.
+sidebar_trending: true
+trending:
+    -   path: http://www.hanlindong.com
+        text: Hanlin's website
+
 # Add a about me block to the sidebar.
 # Specify the avatar picture url in avatar_link
 # Add some word to the description.
 sidebar_about_me: true
 sidebar_avatar_link: https://via.placeholder.com/200x200.png?text=sidebar_avatar_link
+sidebar_avatar_alt: alt
 sidebar_about_description: The owner of this website.
 
 # Add some social network links to the sidebar.
+# The content are identical to the social media part.
 sidebar_social_network: true
 
 # Add contact information to the side bar.
 sidebar_contact: true
 sidebar_contact_name: Adagio Author
+sidebar_contact_prefix: Dr.
+sidebar_contact_suffix: Director
 sidebar_contact_address: 1 Happy Rd. <br> Utopia
 
 # Add archive tags to the side bar.
@@ -123,5 +134,10 @@ google_analytics: true
 google_track_id: UA-11111111-1
 
 
-# Mathjax
-mathjax: true
+# Math parser
+# Math renderer has been moved to KaTeX now.
+math: true
+
+# Copyright
+# If set, a copyright line will be added at the bottom of each post
+post_copyright: ~

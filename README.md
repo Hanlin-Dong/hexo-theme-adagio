@@ -116,21 +116,21 @@ quora_username:        xxxx
 
 It's better to use four buttons. You should find the username in your profile url.
 
-### Mathjax support
+### Math support
 
-If your post contains math equations, you can use mathjax. In the config file, use
+If your post contains math equations, you can set math open in the config file.
 
 ``` yml
-mathjax: true
+math: true
 ```
 
 Then, you can type math equations like this
 
 ``` markdown
-\\[ E = m c^2 \\]
+$$E=mc^2$$
 ```
 
-For detailed documentations, please refer to [Mathjax](https://mathjax.org)
+[KaTeX](https://katex.org/) is used as the engine to render LaTeX math.
 
 ### Analytics
 
@@ -165,7 +165,23 @@ cdn_provider: bootcdn
 
 ### Other configurations
 
-`SEOTitle`, `favicon`, `avatar`, `address`, `friends`, etc. Check the config file!
+`SEOTitle`, `favicon`, `avatar`, `trending`, `address`, `friends`, etc. Check the config file!
+
+## Change log
+
+Current version: v2.0
+
+### v2.0
+
+- Use KaTeX instead of mathjax.
+- Add copyright line for posts.
+- Improve applause-easy.
+- Improve the main css file.
+- Merge some partial ejs files.
+
+### v1.0
+
+- Initial release.
 
 ## License
 

@@ -6,6 +6,10 @@
     <%- partial('_sidebar/tags') %>
     <hr class="row">
 <% } %>
+<% if (theme.sidebar_trending) { %>
+    <%- partial('_sidebar/trending') %>
+    <hr class="row">
+<% } %>
 <% if (theme.sidebar_about_me) { %>
     <%- partial('_sidebar/aboutme') %>
     <hr class="row">
